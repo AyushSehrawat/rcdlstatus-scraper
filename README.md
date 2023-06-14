@@ -8,9 +8,9 @@ Python script to automate the process of getting the RC DL Status from parivahan
 pip install -r requirements.txt
 ```
 
-In addition to the above, you need to install Tessaract OCR on your system. You can download it from [here](https://tesseract-ocr.github.io/tessdoc/Installation.html].
+In addition to the above, you need to install Tessaract OCR on your system. You can download it from [here](https://tesseract-ocr.github.io/tessdoc/Installation.html).
 
-For Windows, you can download the installer from [here](https://github.com/UB-Mannheim/tesseract/wiki]. If this doesn't work, checkout [here](https://tesseract-ocr.github.io/tessdoc/Downloads.html)
+For Windows, you can download the installer from [here](https://github.com/UB-Mannheim/tesseract/wiki). If this doesn't work, checkout [here](https://tesseract-ocr.github.io/tessdoc/Downloads.html)
 
 ## Running the script
 
