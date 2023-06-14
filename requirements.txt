@@ -1,0 +1,5 @@
+requests
+lxml
+pytesseract
+opencv-python
+numpy
