@@ -8,9 +8,7 @@ import pytesseract
 from dl_xpath_consts import get_dl_xpath_consts
 
 class ParivahanDL:
-    def __init__(self, dl_no, dl_dob):
-        self.dl_no = dl_no
-        self.dl_dob = dl_dob
+    def __init__(self):
         self.session = requests.Session()
         self.parivahan_dl_url = "https://parivahan.gov.in/rcdlstatus/?pur_cd=101"
         self.parivahan_dl_post = "https://parivahan.gov.in/rcdlstatus/vahan/rcDlHome.xhtml"
@@ -48,8 +46,6 @@ class ParivahanDL:
             "javax.faces.partial.render": "form_rcdl:pnl_show form_rcdl:pg_show form_rcdl:rcdl_pnl",
             "form_rcdl:j_idt53": "form_rcdl:j_idt53",
             "form_rcdl": "form_rcdl",
-            self.dl_no_form_id: self.dl_no,
-            self.dl_dob_form_id: self.dl_dob,
             "javax.faces.ViewState": self.view_state,   
         }
 
@@ -71,7 +67,10 @@ class ParivahanDL:
             print(e)
             return ""
         
-    def get_dl_details(self):
+    def get_dl_details(self, dl_no, dl_dob):
+        self.data[self.dl_no_form_id] = dl_no
+        self.data[self.dl_dob_form_id] = dl_dob
+
         max_attempts = 50
         attempts = 0
 
@@ -157,7 +156,7 @@ if __name__ == "__main__":
     dl_no = "MH03-20080022135"
     dl_dob = "01-12-1987"
 
-    dl = ParivahanDL(dl_no, dl_dob)
+    dl = ParivahanDL()
     dl.initialize()
-    dl_data = dl.get_dl_details()
+    dl_data = dl.get_dl_details(dl_no, dl_dob)
     print(json.dumps(dl_data, indent=4))
