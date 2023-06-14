@@ -50,7 +50,7 @@ class ParivahanDL:
         }
 
     @staticmethod
-    def replace_chars(text):
+    def replace_chars(text) -> str:
         alphanumeric_text = re.sub(r'\W+', '', text)
         return alphanumeric_text
 
@@ -67,7 +67,7 @@ class ParivahanDL:
             print(e)
             return ""
         
-    def get_dl_details(self, dl_no, dl_dob):
+    def get_dl_details(self, dl_no, dl_dob) -> dict:
         self.data[self.dl_no_form_id] = dl_no
         self.data[self.dl_dob_form_id] = dl_dob
 
