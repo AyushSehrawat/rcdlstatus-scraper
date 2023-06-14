@@ -15,7 +15,7 @@ For Windows, you can download the installer from [here](https://github.com/UB-Ma
 ## Running the script
 
 ```
-python main.py
+python ./src/main.py
 ```
 
 Edit the variables here,
