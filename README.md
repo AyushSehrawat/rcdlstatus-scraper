@@ -15,7 +15,7 @@ For Windows, you can download the installer from [here](https://github.com/UB-Ma
 ## Running the script
 
 ```
-python ./src/main.py
+uvicorn src.main:app --reload
 ```
 
 Edit the variables here,
